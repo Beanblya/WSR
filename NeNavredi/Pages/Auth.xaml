@@ -1,0 +1,34 @@
+﻿<Page x:Class="NeNavredi.Pages.Auth"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:NeNavredi.Pages"
+      xmlns:easy="clr-namespace:EasyCaptcha.Wpf;assembly=EasyCaptcha.Wpf"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Loaded="Page_Loaded">
+
+    <Grid>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Авторизация" FontSize="16"></TextBlock>
+            <StackPanel>
+                <TextBlock Text="Логин"></TextBlock>
+                <TextBox x:Name="Login" Width="100"></TextBox>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Пароль"></TextBlock>
+                <PasswordBox x:Name="PasswordBox" Width="100" Visibility="Visible"></PasswordBox>
+                <TextBox x:Name="PwdText" Width="100" Visibility="Collapsed"></TextBox>
+                <Button x:Name="ShowPwd" Content="Показать пароль" Margin="0 5 0 0" Click="ShowPwd_Click"></Button>
+            </StackPanel>
+            <StackPanel x:Name="CaptchaSP" Orientation="Vertical" Visibility="Collapsed">
+                <TextBlock Text="Captcha:"></TextBlock>
+                <easy:Captcha Name="CaptchaBox"></easy:Captcha>
+                <Button x:Name="RegenCaptcha" Content="Обновить" Margin="10" Click="RegenCaptcha_Click"></Button>
+                <TextBox x:Name="CaptchaTBox" Width="100" FontFamily="Comic Sans MS"></TextBox>
+            </StackPanel>
+            <Button x:Name="LogIn" Content="Войти" Margin="10" Click="LogIn_Click"></Button>
+        </StackPanel>
+    </Grid>
+</Page>

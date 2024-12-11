@@ -1,0 +1,6 @@
+@VtoroeAPI_HostAddress = http://localhost:5017
+
+GET {{VtoroeAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
